@@ -1,0 +1,39 @@
+// Usar la BD
+use ("Boutique")
+
+// Crear la colección de proveedores
+db.createCollection("proveedores", {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            title: 'validacion de proveedores',
+            required: ['nombre', 'direccion'],
+            properties: {
+                nombre: {
+                    bsonType: 'string',
+                    description: 'Nombre del proveedor'
+                },
+                direccion: {
+                    bsonType: 'string',
+                    description: 'Dirección del proveedor'
+                },
+                descuento_especial: {
+                    bsonType: 'decimal',
+                    minimum: 0,
+                    maximum: 100,
+                    description: 'Descuento especial entre 0% y 100%'
+                },
+                fecha_descuento: {
+                    bsonType: 'date',
+                    description: 'Fecha de aplicación del descuento'
+                }
+            }
+        }
+    }
+});
+
+// Crear índice único para el nombre del proveedor
+db.proveedores.createIndex(
+    {nombre: 1},
+    {unique: true}
+);

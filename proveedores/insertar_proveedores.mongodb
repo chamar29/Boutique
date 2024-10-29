@@ -1,0 +1,10 @@
+// Usar la BD
+use ("Boutique")
+
+//Insertar el documento en la colección
+db.proveedores.insertOne({
+    nombre: 'Proveedor Unico',
+    direccion: 'Calle Norte 101, Las Flores, Villa Hidalgo,Jalisco',
+    descuento_especial: 10,
+    fecha_descuento: '2024-01-01',
+})

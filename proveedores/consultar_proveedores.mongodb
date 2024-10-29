@@ -1,0 +1,6 @@
+// Usar la BD
+use ("Boutique")
+
+//Consultar los registros 
+// SELECT * FROM 
+db.proveedores.find()

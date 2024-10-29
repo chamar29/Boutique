@@ -1,0 +1,5 @@
+// Usar la BD
+use ("Boutique")
+
+
+db.proveedores.drop()
