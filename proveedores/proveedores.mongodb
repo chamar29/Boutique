@@ -37,9 +37,3 @@ db.proveedores.createIndex(
     {nombre: 1},
     {unique: true}
 );
-
-// Crear índice único para el nombre del proveedor
-db.proveedores.createIndex(
-    {nombre: 1},
-    {unique: true}
-);
