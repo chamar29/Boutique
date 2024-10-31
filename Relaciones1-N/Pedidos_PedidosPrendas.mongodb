@@ -1,0 +1,35 @@
+use("TiqueMaelFashion");
+
+// Tabla Pedidos
+db.createCollection("Pedidos", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Validación de Pedidos",
+            required: ["PedidoID", "Fecha_Pedido", "Total_Pedido", "Descuento", "Estado"],
+            properties: {
+                PedidoID: { bsonType: "int" },
+                Fecha_Pedido: { bsonType: "date", description: "Fecha del pedido" },
+                Total_Pedido: { bsonType: "double", description: "Monto total del pedido" },
+                Descuento: { bsonType: "double", description: "Descuento aplicado al pedido" },
+                Estado: { bsonType: "string", description: "Estado actual del pedido" },
+                Prendas: {
+                    bsonType: "array",
+                    description: "Lista de prendas en el pedido",
+                    items: {
+                        bsonType: "object",
+                        title: "Validación de Prenda en Pedido",
+                        required: ["ID_Prenda", "Cantidad", "Costo", "Precio_Venta"],
+                        properties: {
+                            ID_Prenda: { bsonType: "int", description: "ID de la prenda en el pedido" },
+                            Cantidad: { bsonType: "int", description: "Cantidad de la prenda solicitada" },
+                            Costo: { bsonType: "double", description: "Costo unitario de la prenda" },
+                            Precio_Venta: { bsonType: "double", description: "Precio de venta unitario" },
+                            Revisado: { bsonType: "bool", description: "Indica si la prenda ha sido revisada" }
+                        }
+                    }
+                }
+            }
+        }
+    }
+});

@@ -1,0 +1,19 @@
+use("TiqueMaelFashion");
+
+// Tabla Sucursales
+db.createCollection("Sucursales", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Validación de Sucursales",
+            required: ["SucursalID", "Nombre_Sucursal", "Direccion", "Metodo_Venta"],
+            properties: {
+                SucursalID: { bsonType: "int" },
+                Nombre_Sucursal: { bsonType: "string", description: "Nombre de la sucursal" },
+                Direccion: { bsonType: "string", description: "Dirección de la sucursal" },
+                Metodo_Venta: { bsonType: "string", description: "Método de venta: Físico o en línea" },
+                ID_Usuario: { bsonType: "int", description: "ID del usuario asignado a la sucursal" }
+            }
+        }
+    }
+});
