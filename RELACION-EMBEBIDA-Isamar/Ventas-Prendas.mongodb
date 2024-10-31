@@ -1,0 +1,35 @@
+use("TiqueMaelFashion");
+
+// Tabla Ventas
+db.createCollection("Ventas", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Validación de Ventas",
+            required: ["VentaID", "ClienteID", "Monto_Total", "Anticipo", "Fecha_Compra", "Metodo_Pago", "Tipo_Venta"],
+            properties: {
+                VentaID: { bsonType: "int" },
+                ClienteID: { bsonType: "int", description: "ID del cliente que realiza la compra" },
+                Monto_Total: { bsonType: "double", description: "Monto total de la venta" },
+                Anticipo: { bsonType: "double", description: "Monto de anticipo pagado por el cliente" },
+                Fecha_Compra: { bsonType: "date", description: "Fecha de la compra" },
+                Metodo_Pago: { bsonType: "string", description: "Método de pago (Efectivo, Tarjeta, etc.)" },
+                Tipo_Venta: { bsonType: "string", description: "Tipo de venta (Física o en línea)" },
+                Prendas: {
+                    bsonType: "array",
+                    description: "Lista de prendas en la venta",
+                    items: {
+                        bsonType: "object",
+                        title: "Validación de Prenda en Venta",
+                        required: ["ID_Prenda", "Cantidad", "Precio"],
+                        properties: {
+                            ID_Prenda: { bsonType: "int", description: "ID de la prenda en la venta" },
+                            Cantidad: { bsonType: "int", description: "Cantidad de la prenda vendida" },
+                            Precio: { bsonType: "double", description: "Precio unitario de la prenda" }
+                        }
+                    }
+                }
+            }
+        }
+    }
+});

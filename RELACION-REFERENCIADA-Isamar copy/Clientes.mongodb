@@ -1,0 +1,22 @@
+use("TiqueMaelFashion");
+
+// Tabla Clientes
+db.createCollection("Clientes", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Validación de Clientes",
+            required: ["ClienteID", "Nombre", "Apellido_Paterno", "Apellido_Materno", "Telefono", "Email", "Metodo_Contacto"],
+            properties: {
+                ClienteID: { bsonType: "int" },
+                Nombre: { bsonType: "string", description: "Nombre del cliente" },
+                Apellido_Paterno: { bsonType: "string", description: "Apellido paterno del cliente" },
+                Apellido_Materno: { bsonType: "string", description: "Apellido materno del cliente" },
+                Telefono: { bsonType: "string", description: "Teléfono del cliente" },
+                Email: { bsonType: "string", description: "Correo electrónico del cliente" },
+                Metodo_Contacto: { bsonType: "string", description: "Método de contacto preferido (Facebook, WhatsApp, etc.)" }
+            }
+        }
+    }
+});
+
