@@ -1,0 +1,20 @@
+
+//Usar la base de datos
+use("Boutique");
+
+// Colección de Catálogos
+db.createCollection("Catalogos", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Validación de Catálogos",
+            required: ["id_catalogo", "nombre_categoria", "tipo_prenda", "temporada"],
+            properties: {
+                id_catalogo: { bsonType: "int", description: "ID único del catálogo" },
+                nombre_categoria: { bsonType: "string", description: "Nombre de la categoría" },
+                tipo_prenda: { bsonType: "string", description: "Tipo de prenda en el catálogo" },
+                temporada: { bsonType: "string", description: "Temporada de la colección" }
+            }
+        }
+    }
+});

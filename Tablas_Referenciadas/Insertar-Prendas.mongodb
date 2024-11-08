@@ -1,0 +1,127 @@
+
+//Usar la base de datos
+use("Boutique");
+
+db.Prendas.insertMany(
+    [
+        {
+            "id_prenda": 1,
+            "tipo": "Blusa",
+            "talla": "M",
+            "color": "Rojo",
+            "precio": 305,
+            "margen_ganancia": 20,
+            "imagen": "blusa_roja.jpg",
+            "clasificacion": "Primavera",
+            "id_catalogo": 1,
+            "id_sucursal": 1
+        },
+        {
+            "id_prenda": 2,
+            "tipo": "Vestido",
+            "talla": "L",
+            "color": "Azul",
+            "precio": 550,
+            "margen_ganancia": 25,
+            "imagen": "vestido_azul.jpg",
+            "clasificacion": "Verano",
+            "id_catalogo": 2,
+            "id_sucursal": 1
+        },
+        {
+            "id_prenda": 3,
+            "tipo": "Chaqueta",
+            "talla": "M",
+            "color": "Negro",
+            "precio": 600,
+            "margen_ganancia": 15,
+            "imagen": "chaqueta_negra.jpg",
+            "clasificacion": "Otoño",
+            "id_catalogo": 3,
+            "id_sucursal": 1
+        },
+        {
+            "id_prenda": 4,
+            "tipo": "Abrigo",
+            "talla": "S",
+            "color": "Beige",
+            "precio": 800,
+            "margen_ganancia": 30,
+            "imagen": "abrigo_beige.jpg",
+            "clasificacion": "Invierno",
+            "id_catalogo": 4,
+            "id_sucursal": 1
+        },
+        {
+            "id_prenda": 5,
+            "tipo": "Pantalón",
+            "talla": "L",
+            "color": "Gris",
+            "precio": 400,
+            "margen_ganancia": 18,
+            "imagen": "pantalon_gris.jpg",
+            "clasificacion": "Primavera",
+            "id_catalogo": 1,
+            "id_sucursal": 1
+        },
+        {
+            "id_prenda": 6,
+            "tipo": "Falda",
+            "talla": "S",
+            "color": "Negro",
+            "precio": 350,
+            "margen_ganancia": 22,
+            "imagen": "falda_negra.jpg",
+            "clasificacion": "Verano",
+            "id_catalogo": 2,
+            "id_sucursal": 1
+        },
+        {
+            "id_prenda": 7,
+            "tipo": "Top",
+            "talla": "M",
+            "color": "Verde",
+            "precio": 250,
+            "margen_ganancia": 10,
+            "imagen": "top_verde.jpg",
+            "clasificacion": "Verano",
+            "id_catalogo": 6,
+            "id_sucursal": 1
+        },
+        {
+            "id_prenda": 8,
+            "tipo": "Cárdigan",
+            "talla": "L",
+            "color": "Blanco",
+            "precio": 500,
+            "margen_ganancia": 20,
+            "imagen": "cardigan_blanco.jpg",
+            "clasificacion": "Otoño",
+            "id_catalogo": 5,
+            "id_sucursal": 1
+        },
+        {
+            "id_prenda": 9,
+            "tipo": "Bufanda",
+            "talla": "U",
+            "color": "Rojo",
+            "precio": 200,
+            "margen_ganancia": 5,
+            "imagen": "bufanda_roja.jpg",
+            "clasificacion": "Invierno",
+            "id_catalogo": 8,
+            "id_sucursal": 1
+        },
+        {
+            "id_prenda": 10,
+            "tipo": "Short",
+            "talla": "M",
+            "color": "Azul",
+            "precio": 280,
+            "margen_ganancia": 15,
+            "imagen": "short_azul.jpg",
+            "clasificacion": "Verano",
+            "id_catalogo": 2,
+            "id_sucursal": 1
+        }
+    ]);
