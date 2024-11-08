@@ -1,0 +1,357 @@
+
+//Usar la base de datos
+use("Boutique");
+
+db.Pedidos.insertMany(
+[
+    {
+        "id_pedido": 1,
+        "dia": 12,
+        "mes": 6,
+        "ano": 2023,
+        "total_pedido": 300,
+        "descuento": 0,
+        "estado": "En proceso",
+        "id_proveedor": 1,
+        "id_sucursal": 1,
+        "prendas": [
+            {
+                "id_prenda": 1,
+                "cantidad": 2,
+                "costo": 240,
+                "precio_venta": 300,
+                "revisado": "Revisado"
+            },
+            {
+                "id_prenda": 2,
+                "cantidad": 1,
+                "costo": 440,
+                "precio_venta": 550,
+                "revisado": "Revisado"
+            }
+        ],
+        "envio": [
+            {
+                "guia": "123456789ABC",
+                "dia_envio": 7,
+                "mes_envio": 1,
+                "ano_envio": 2023,
+                "retraso": "No hubo retraso",
+                "descripcion_problema": ""
+            }
+        ]
+    },
+    {
+        "id_pedido": 2,
+        "dia": 15,
+        "mes": 7,
+        "ano": 2023,
+        "total_pedido": 400,
+        "descuento": 10,
+        "estado": "Entregado",
+        "id_proveedor": 1,
+        "id_sucursal": 1,
+        "prendas": [
+            {
+                "id_prenda": 3,
+                "cantidad": 3,
+                "costo": 520,
+                "precio_venta": 600,
+                "revisado": "Revisado"
+            },
+            {
+                "id_prenda": 4,
+                "cantidad": 1,
+                "costo": 800,
+                "precio_venta": 800,
+                "revisado": "Revisado"
+            }
+        ],
+        "envio": [
+            {
+                "guia": "987654321XYZ",
+                "dia_envio": 14,
+                "mes_envio": 1,
+                "ano_envio": 2023,
+                "retraso": "Hubo retraso",
+                "descripcion_problema": "Retraso en la entrega"
+            }
+        ]
+    },
+    {
+        "id_pedido": 3,
+        "dia": 22,
+        "mes": 8,
+        "ano": 2023,
+        "total_pedido": 550,
+        "descuento": 0,
+        "estado": "Cancelado",
+        "id_proveedor": 1,
+        "id_sucursal": 1,
+        "prendas": [
+            {
+                "id_prenda": 5,
+                "cantidad": 1,
+                "costo": 360,
+                "precio_venta": 400,
+                "revisado": "Revisado"
+            }
+        ],
+        "envio": [
+            {
+                "guia": "456789123XYZ",
+                "dia_envio": 21,
+                "mes_envio": 2,
+                "ano_envio": 2023,
+                "retraso": "No hubo retraso",
+                "descripcion_problema": ""
+            }
+        ]
+    },
+    {
+        "id_pedido": 4,
+        "dia": 5,
+        "mes": 9,
+        "ano": 2023,
+        "total_pedido": 450,
+        "descuento": 5,
+        "estado": "En proceso",
+        "id_proveedor": 1,
+        "id_sucursal": 1,
+        "prendas": [
+            {
+                "id_prenda": 6,
+                "cantidad": 2,
+                "costo": 300,
+                "precio_venta": 350,
+                "revisado": "Revisado"
+            }
+        ],
+        "envio": [
+            {
+                "guia": "321654987ABC",
+                "dia_envio": 28,
+                "mes_envio": 3,
+                "ano_envio": 2023,
+                "retraso": "Hubo retraso",
+                "descripcion_problema": "Problema con la dirección"
+            }
+        ]
+    },
+    {
+        "id_pedido": 5,
+        "dia": 20,
+        "mes": 9,
+        "ano": 2023,
+        "total_pedido": 600,
+        "descuento": 0,
+        "estado": "Entregado",
+        "id_proveedor": 1,
+        "id_sucursal": 1,
+        "prendas": [
+            {
+                "id_prenda": 7,
+                "cantidad": 1,
+                "costo": 200,
+                "precio_venta": 250,
+                "revisado": "Revisado"
+            }
+        ],
+        "envio": [
+            {
+                "guia": "654321789XYZ",
+                "dia_envio": 4,
+                "mes_envio": 4,
+                "ano_envio": 2023,
+                "retraso": "No hubo retraso",
+                "descripcion_problema": ""
+            }
+        ]
+    },
+    {
+        "id_pedido": 6,
+        "dia": 10,
+        "mes": 10,
+        "ano": 2023,
+        "total_pedido": 500,
+        "descuento": 20,
+        "estado": "En proceso",
+        "id_proveedor": 1,
+        "id_sucursal": 1,
+        "prendas": [
+            {
+                "id_prenda": 8,
+                "cantidad": 1,
+                "costo": 400,
+                "precio_venta": 500,
+                "revisado": "Revisado"
+            }
+        ],
+        "envio": [
+            {
+                "guia": "789123654ABC",
+                "dia_envio": 11,
+                "mes_envio": 5,
+                "ano_envio": 2023,
+                "retraso": "Hubo retraso",
+                "descripcion_problema": "Retraso en la entrega"
+            }
+        ]
+    },
+    {
+        "id_pedido": 7,
+        "dia": 18,
+        "mes": 10,
+        "ano": 2023,
+        "total_pedido": 320,
+        "descuento": 0,
+        "estado": "Entregado",
+        "id_proveedor": 1,
+        "id_sucursal": 1,
+        "prendas": [
+            {
+                "id_prenda": 9,
+                "cantidad": 1,
+                "costo": 150,
+                "precio_venta": 200,
+                "revisado": "Revisado"
+            }
+        ],
+        "envio": [
+            {
+                "guia": "963258741XYZ",
+                "dia_envio": 18,
+                "mes_envio": 6,
+                "ano_envio": 2023,
+                "retraso": "No hubo retraso",
+                "descripcion_problema": ""
+            }
+        ]
+    },
+    {
+        "id_pedido": 8,
+        "dia": 2,
+        "mes": 11,
+        "ano": 2023,
+        "total_pedido": 700,
+        "descuento": 15,
+        "estado": "En proceso",
+        "id_proveedor": 1,
+        "id_sucursal": 1,
+        "prendas": [
+            {
+                "id_prenda": 10,
+                "cantidad": 2,
+                "costo": 240,
+                "precio_venta": 280,
+                "revisado": "Revisado"
+            }
+        ],
+        "envio": [
+            {
+                "guia": "258369147ABC",
+                "dia_envio": 25,
+                "mes_envio": 7,
+                "ano_envio": 2023,
+                "retraso": "Hubo retraso",
+                "descripcion_problema": "Paquete dañado"
+            }
+        ]
+    },
+    {
+        "id_pedido": 9,
+        "dia": 9,
+        "mes": 11,
+        "ano": 2023,
+        "total_pedido": 480,
+        "descuento": 5,
+        "estado": "Cancelado",
+        "id_proveedor": 1,
+        "id_sucursal": 1,
+        "envio": [
+            {
+                "guia": "147852369XYZ",
+                "dia_envio": 3,
+                "mes_envio": 8,
+                "ano_envio": 2023,
+                "retraso": "No hubo retraso",
+                "descripcion_problema": ""
+            }
+        ]
+    },
+    {
+        "id_pedido": 10,
+        "dia": 15,
+        "mes": 11,
+        "ano": 2023,
+        "total_pedido": 520,
+        "descuento": 0,
+        "estado": "Entregado",
+        "id_proveedor": 1,
+        "id_sucursal": 1,
+        "prendas": [
+            {
+                "id_prenda": 2,
+                "cantidad": 0,
+                "costo": 440,
+                "precio_venta": 550,
+                "revisado": "Revisado"
+            },
+            {
+                "id_prenda": 6,
+                "cantidad": 0,
+                "costo": 300,
+                "precio_venta": 350,
+                "revisado": "Revisado"
+            }
+        ],
+        "envio": [
+            {
+                "guia": "369258147ABC",
+                "dia_envio": 10,
+                "mes_envio": 9,
+                "ano_envio": 2023,
+                "retraso": "Hubo retraso",
+                "descripcion_problema": "Retraso en la entrega"
+            }
+        ]
+    },
+    {
+        "id_pedido": 11,
+        "dia": 9,
+        "mes": 10,
+        "ano": 2024,
+        "total_pedido": 1200,
+        "descuento": 50.00,
+        "estado": "En proceso",
+        "id_proveedor": 1,
+        "id_sucursal": 1
+    },
+    {
+        "id_pedido": 12,
+        "dia": 9,
+        "mes": 10,
+        "ano": 2024,
+        "total_pedido": 1200,
+        "descuento": 50,
+        "estado": "En proceso",
+        "id_proveedor": 1,
+        "id_sucursal": 1,
+        "prendas": [
+            {
+                "id_prenda": 2,
+                "cantidad": 0,
+                "costo": 440,
+                "precio_venta": 550,
+                "revisado": "Revisado"
+            },
+            {
+                "id_prenda": 6,
+                "cantidad": 0,
+                "costo": 300,
+                "precio_venta": 350,
+                "revisado": "Revisado"
+            }
+        ]
+    }
+]);

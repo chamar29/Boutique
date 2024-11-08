@@ -1,0 +1,54 @@
+
+//Usar la base de datos
+use("Boutique");
+
+// Colección de Pedidos
+db.createCollection("Pedidos", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Validación de Pedidos",
+            required: ["id_pedido", "dia", "mes", "ano", "total_pedido", "descuento", "estado", "id_proveedor", "id_sucursal"],
+            properties: {
+                id_pedido: { bsonType: "int", description: "ID único del pedido" },
+                dia: { bsonType: "int", description: "Día de realización del pedido" },
+                mes: { bsonType: "int", description: "Mes de realización del pedido" },
+                ano: { bsonType: "int", description: "Año de realización del pedido" },
+                total_pedido: { bsonType: "int", description: "Total del pedido" },
+                descuento: { bsonType: "int", description: "Descuento aplicado en el pedido" },
+                estado: { bsonType: "string", description: "Estado del pedido (Ej. En proceso, Entregado)" },
+                id_proveedor: { bsonType: "int", description: "ID del proveedor asociado al pedido" },
+                id_sucursal: { bsonType: "int", description: "ID de la sucursal que realiza el pedido" },
+                
+                prendas: {
+                    bsonType: "array",
+                    description: "Lista de prendas en el pedido",
+                    items: {
+                        bsonType: "object",
+                        required: ["id_prenda", "cantidad", "costo", "precio_venta", "revisado"],
+                        properties: {
+                            id_prenda: { bsonType: "int", description: "ID de la prenda" },
+                            cantidad: { bsonType: "int", description: "Cantidad solicitada" },
+                            costo: { bsonType: "int", description: "Costo de la prenda en el pedido" },
+                            precio_venta: { bsonType: "int", description: "Precio de venta de la prenda" },
+                            revisado: { bsonType: "string", description: "Indica si fue revisado" }
+                        }
+                    }
+                },
+                
+                envio: {
+                    bsonType: "array",
+                    required: ["guia", "dia_envio", "mes_envio", "ano_envio", "retraso", "descripcion_problema"],
+                    properties: {
+                        guia: { bsonType: "string", description: "Número de guía de envío" },
+                        dia_envio: { bsonType: "int", description: "Día de envío" },
+                        mes_envio: { bsonType: "int", description: "Mes de envío" },
+                        ano_envio: { bsonType: "int", description: "Año de envío" },
+                        retraso: { bsonType: "string", description: "Indica si hubo retraso" },
+                        descripcion_problema: { bsonType: "string", description: "Descripción de problemas en el envío" }
+                    }
+                }
+            }
+        }
+    }
+});

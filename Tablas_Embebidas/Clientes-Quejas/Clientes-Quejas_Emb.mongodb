@@ -1,0 +1,38 @@
+
+//Usar la base de datos
+use("Boutique");
+
+// Colección de Clientes con Quejas embebidas
+db.createCollection("Clientes", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            title: "Validación de Clientes con Quejas",
+            required: ["id_cliente", "nombre", "apellido_paterno", "apellido_materno", "rfc", "telefono", "email", "metodo_contacto", "id_sucursal", "quejas"],
+            properties: {
+                id_cliente: { bsonType: "int", description: "ID único del cliente" },
+                nombre: { bsonType: "string", description: "Nombre del cliente" },
+                apellido_paterno: { bsonType: "string", description: "Apellido paterno del cliente" },
+                apellido_materno: { bsonType: "string", description: "Apellido materno del cliente" },
+                rfc: { bsonType: "string", description: "RFC del cliente" },
+                telefono: { bsonType: "string", description: "Teléfono de contacto del cliente" },
+                email: { bsonType: "string", description: "Correo electrónico del cliente" },
+                metodo_contacto: { bsonType: "string", description: "Método de contacto preferido del cliente" },
+                id_sucursal: { bsonType: "int", description: "ID de la sucursal asociada al cliente" },
+                
+                quejas: {
+                    bsonType: "array",
+                    title: "Lista de quejas del cliente",
+                    items: {
+                        bsonType: "object",
+                        required: ["descripcion", "resolucion"],
+                        properties: {
+                            descripcion: { bsonType: "string", description: "Descripción de la queja" },
+                            resolucion: { bsonType: "string", description: "Resolución dada a la queja" },
+                        }
+                    }
+                }
+            }
+        }
+    }
+});

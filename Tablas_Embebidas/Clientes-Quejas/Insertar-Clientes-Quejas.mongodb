@@ -1,0 +1,190 @@
+
+//Usar la base de datos
+use("Boutique");
+
+db.Clientes.insertMany(
+    [
+        {
+            "id_cliente": 1,
+            "nombre": "Ana",
+            "apellido_paterno": "López",
+            "apellido_materno": "Pérez",
+            "rfc": "LOPA900101ABC",
+            "telefono": "5551234567",
+            "email": "ana@gmail.com",
+            "metodo_contacto": "Facebook",
+            "id_sucursal": 1,
+            "quejas": [
+                {
+                    "descripcion": "La prenda llegó dañada",
+                    "resolucion": "Se realizó el reembolso"
+                },
+                {
+                    "descripcion": "Devolución del Pantalón Gris",
+                    "resolucion": "Reembolso emitido"
+                },
+                {
+                    "descripcion": "Devolución de la blusa roja",
+                    "resolucion": "Reembolso emitido"
+                },
+                {
+                    "descripcion": "Devolución de la blusa roja",
+                    "resolucion": "Reembolso emitido"
+                }
+            ]
+        },
+        {
+            "id_cliente": 2,
+            "nombre": "Carlos",
+            "apellido_paterno": "García",
+            "apellido_materno": "Fernández",
+            "rfc": "GARC860202XYZ",
+            "telefono": "5552345678",
+            "email": "carlos@gmail.com",
+            "metodo_contacto": "Teléfono",
+            "id_sucursal": 1,
+            "quejas": [
+                {
+                    "descripcion": "Retraso en la entrega",
+                    "resolucion": "Se ofreció un descuento en la próxima compra"
+                }
+            ]
+        },
+        {
+            "id_cliente": 3,
+            "nombre": "María",
+            "apellido_paterno": "Torres",
+            "apellido_materno": "Sánchez",
+            "rfc": "TORM920303LMN",
+            "telefono": "5553456789",
+            "email": "maria@gmail.com",
+            "metodo_contacto": "WhatsApp",
+            "id_sucursal": 1,
+            "quejas": [
+                {
+                    "descripcion": "Producto incorrecto",
+                    "resolucion": "Se realizó el cambio sin costo"
+                }
+            ]
+        },
+        {
+            "id_cliente": 4,
+            "nombre": "Luis",
+            "apellido_paterno": "Martínez",
+            "apellido_materno": "Cruz",
+            "rfc": "MART800404PQR",
+            "telefono": "5554567890",
+            "email": "luis@gmail.com",
+            "metodo_contacto": "Facebook",
+            "id_sucursal": 1,
+            "quejas": [
+                {
+                    "descripcion": "No se recibió la confirmación de envío",
+                    "resolucion": "Se contactó al cliente y se envió la información"
+                }
+            ]
+        },
+        {
+            "id_cliente": 5,
+            "nombre": "Sofía",
+            "apellido_paterno": "Gómez",
+            "apellido_materno": "Ramírez",
+            "rfc": "GOME920505LMN",
+            "telefono": "5559876543",
+            "email": "sofia@gmail.com",
+            "metodo_contacto": "Instagram",
+            "id_sucursal": 1,
+            "quejas": [
+                {
+                    "descripcion": "El tamaño no es correcto",
+                    "resolucion": "Se ofreció el cambio de la prenda"
+                }
+            ]
+        },
+        {
+            "id_cliente": 6,
+            "nombre": "Pedro",
+            "apellido_paterno": "Jiménez",
+            "apellido_materno": "Salas",
+            "rfc": "JIME930606XYZ",
+            "telefono": "5556543210",
+            "email": "pedro@gmail.com",
+            "metodo_contacto": "Teléfono",
+            "id_sucursal": 1,
+            "quejas": [
+                {
+                    "descripcion": "La calidad de la prenda no es la esperada",
+                    "resolucion": "Se ofreció un descuento en la próxima compra"
+                }
+            ]
+        },
+        {
+            "id_cliente": 7,
+            "nombre": "Claudia",
+            "apellido_paterno": "Cabrera",
+            "apellido_materno": "Hernández",
+            "rfc": "CABR850707ABC",
+            "telefono": "5551112222",
+            "email": "claudia@gmail.com",
+            "metodo_contacto": "WhatsApp",
+            "id_sucursal": 1,
+            "quejas": [
+                {
+                    "descripcion": "Retraso en la entrega",
+                    "resolucion": "Se está investigando con el proveedor"
+                }
+            ]
+        },
+        {
+            "id_cliente": 8,
+            "nombre": "Diego",
+            "apellido_paterno": "Salazar",
+            "apellido_materno": "Montoya",
+            "rfc": "SALA870808LMN",
+            "telefono": "5552223333",
+            "email": "diego@gmail.com",
+            "metodo_contacto": "Facebook",
+            "id_sucursal": 1,
+            "quejas": [
+                {
+                    "descripcion": "La prenda no coincide con la foto",
+                    "resolucion": "Se ofreció el cambio"
+                }
+            ]
+        },
+        {
+            "id_cliente": 9,
+            "nombre": "Patricia",
+            "apellido_paterno": "Vázquez",
+            "apellido_materno": "López",
+            "rfc": "VAZQ840909ABC",
+            "telefono": "5553334444",
+            "email": "patricia@gmail.com",
+            "metodo_contacto": "Instagram",
+            "id_sucursal": 1,
+            "quejas": [
+                {
+                    "descripcion": "Falta de seguimiento",
+                    "resolucion": "Se contactó al cliente y se ofreció una solución"
+                }
+            ]
+        },
+        {
+            "id_cliente": 10,
+            "nombre": "Juan",
+            "apellido_paterno": "Alvarez",
+            "apellido_materno": "Reyes",
+            "rfc": "ALVA810101XYZ",
+            "telefono": "5554445555",
+            "email": "juan@gmail.com",
+            "metodo_contacto": "Teléfono",
+            "id_sucursal": 1,
+            "quejas": [
+                {
+                    "descripcion": "Problema con la guía de envío",
+                    "resolucion": "Se realizó el reembolso"
+                }
+            ]
+        }
+    ]
+);
