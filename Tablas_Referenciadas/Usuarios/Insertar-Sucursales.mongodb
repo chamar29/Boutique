@@ -1,0 +1,14 @@
+
+//Usar la base de datos
+use("Boutique");
+
+// Insertar el documento en la colección Sucursales
+db.Sucursales.insertOne(
+    {
+        "id_sucursal": 1,
+        "nombre_sucursal": "Tique&Mael Fashion",
+        "direccion": "Emiliano Zapata, Villamar, Michoacán, en la calle Pablo Canela #7",
+        "metodo_venta": "Físico y en línea"
+    }
+);
+
