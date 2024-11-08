@@ -1,0 +1,14 @@
+
+//Usar la base de datos
+use("Boutique");
+
+db.Proveedores.insertMany(
+[
+    {
+        "id_proveedor": 1,
+        "nombre_proveedor": "Proveedor Único",
+        "direccion": "Calle Norte 101, Las Flores, Villa Hidalgo, Jalisco",
+        "descuento_especial": 10,
+        "fecha_descuento": "2024-01-01"
+    }
+]);
